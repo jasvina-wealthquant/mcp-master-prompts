@@ -6,13 +6,13 @@
 
 <p align="center">
   <b>Copy and paste prompts that turn an AI agent with MCP tools into a careful analyst.</b><br>
-  Web research, markets and finance, marketing, creative media, engineering, documents, and multi tool chains.
+  Web research, markets and finance, trading strategy automation, marketing, creative media, engineering, documents, and multi tool chains.
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License: MIT"></a>
-  <a href="#prompt-catalog"><img src="https://img.shields.io/badge/Prompts-34-2fa37a?style=for-the-badge" alt="Prompts"></a>
-  <a href="#prompt-catalog"><img src="https://img.shields.io/badge/Domains-8-0b7285?style=for-the-badge" alt="Domains"></a>
+  <a href="#prompt-catalog"><img src="https://img.shields.io/badge/Prompts-37-2fa37a?style=for-the-badge" alt="Prompts"></a>
+  <a href="#prompt-catalog"><img src="https://img.shields.io/badge/Domains-9-0b7285?style=for-the-badge" alt="Domains"></a>
   <a href="docs/principles.md"><img src="https://img.shields.io/badge/Principles-10-6741d9?style=for-the-badge" alt="Principles"></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-e8590c?style=for-the-badge" alt="PRs welcome"></a>
 </p>
@@ -64,7 +64,7 @@ cp prompts/01-web-research/deep-research-brief.md ~/.claude/commands/deep-resear
 
 ## Prompt catalog
 
-**34 prompts across 8 domains.**
+**37 prompts across 9 domains.**
 
 | Domain | Prompts | Highlights | Folder |
 | --- | --- | --- | --- |
@@ -76,6 +76,7 @@ cp prompts/01-web-research/deep-research-brief.md ~/.claude/commands/deep-resear
 | **🔧 Engineering** | 4 | Codebase onboarding, GitHub issue triage, PR deep review, dependency and library audit | [05-engineering/](prompts/05-engineering) |
 | **📄 Data and documents** | 3 | PDF to insights, spreadsheet analyst, meeting notes to actions | [06-data-documents/](prompts/06-data-documents) |
 | **🔗 Multi MCP chains** | 2 | Research to publish pipeline, market signal to content pipeline | [07-multi-mcp-chains/](prompts/07-multi-mcp-chains) |
+| **🤖 Trading strategies** `NEW` | 3 | Strategy builder master prompt (Strategy Card, backtest, paper trade, GO LIVE gate), short straddle example, point and figure breakout example | [08-trading-strategies/](prompts/08-trading-strategies) |
 
 <details>
 <summary><b>See every prompt</b></summary>
@@ -130,7 +131,27 @@ cp prompts/01-web-research/deep-research-brief.md ~/.claude/commands/deep-resear
 - [Research to publish pipeline](prompts/07-multi-mcp-chains/research-to-publish.md)
 - [Market signal to content pipeline](prompts/07-multi-mcp-chains/market-signal-to-content.md)
 
+#### 🤖 Trading strategies
+- [Strategy builder master prompt](prompts/08-trading-strategies/strategy-builder-master-prompt.md): describe any strategy on a one page card, get a tested bot
+- [Example: short straddle on a 15 minute chart](prompts/08-trading-strategies/examples/short-straddle-ema.md)
+- [Example: point and figure breakout for swing trades](prompts/08-trading-strategies/examples/point-and-figure-breakout.md)
+
 </details>
+
+---
+
+## Featured: build your own trading strategy
+
+Describe any strategy in plain words on a one page **Strategy Card**. The [strategy builder master prompt](prompts/08-trading-strategies/strategy-builder-master-prompt.md) makes the agent restate it, flag every ambiguous rule, build it in small tested modules, backtest it on the same code it will trade with, paper trade it, and go live only when you type `GO LIVE`.
+
+```text
+Phase 0  Understand   restate the card, list ambiguities and risks      → you answer
+Phase 1  Data         contracts, candles, indicators, charts             → you check signals by eye
+Phase 2  Rules        signals and risk as unit tested functions          → you review tests
+Phase 3  Backtest     same code, real costs, in and out of sample        → you decide
+Phase 4  Paper        dry run fills, full logs, daily summary            → you decide
+Phase 5  Live         only after GO LIVE, smallest size, kill switch on
+```
 
 ---
 
@@ -184,7 +205,7 @@ New prompts are welcome. Copy [PROMPT_TEMPLATE.md](PROMPT_TEMPLATE.md), test it 
 
 ## Disclaimer
 
-The markets and finance prompts produce research aids, not investment advice. Outputs depend on live tool data that can be delayed or wrong. Always verify before you act, and consult a registered adviser for decisions about your money.
+The markets, finance and trading strategy prompts produce research and engineering aids, not investment advice. Automated trading can lose money quickly; the strategy builder defaults to simulation and needs your explicit go ahead before any live order. Outputs depend on live tool data that can be delayed or wrong. Always verify before you act, and consult a registered adviser for decisions about your money.
 
 ## License
 
