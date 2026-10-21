@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License: MIT"></a>
-  <a href="#prompt-catalog"><img src="https://img.shields.io/badge/Prompts-37-2fa37a?style=for-the-badge" alt="Prompts"></a>
+  <a href="#prompt-catalog"><img src="https://img.shields.io/badge/Prompts-38-2fa37a?style=for-the-badge" alt="Prompts"></a>
   <a href="#prompt-catalog"><img src="https://img.shields.io/badge/Domains-9-0b7285?style=for-the-badge" alt="Domains"></a>
   <a href="docs/principles.md"><img src="https://img.shields.io/badge/Principles-10-6741d9?style=for-the-badge" alt="Principles"></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-e8590c?style=for-the-badge" alt="PRs welcome"></a>
@@ -64,13 +64,13 @@ cp prompts/01-web-research/deep-research-brief.md ~/.claude/commands/deep-resear
 
 ## Prompt catalog
 
-**37 prompts across 9 domains.**
+**38 prompts across 9 domains.**
 
 | Domain | Prompts | Highlights | Folder |
 | --- | --- | --- | --- |
 | **🧠 Meta and orchestration** | 5 | Universal analyst system prompt, tool discovery, plan then execute, verify and cite, cost guard | [00-meta/](prompts/00-meta) |
 | **🌐 Web research** | 6 | Deep research brief, competitor teardown, fact check, news digest, pricing tracker, SEO and site audit | [01-web-research/](prompts/01-web-research) |
-| **📈 Markets and finance** | 6 | Stock 360 view, portfolio health check, earnings call digest, sector rotation scan, weekly market wrap, risk and exposure review | [02-markets-finance/](prompts/02-markets-finance) |
+| **📈 Markets and finance** | 7 | Stock 360 view, portfolio concentration report (HTML with pie and bar charts), portfolio health check, earnings call digest, sector rotation scan, weekly market wrap, risk and exposure review | [02-markets-finance/](prompts/02-markets-finance) |
 | **📣 Marketing and content** | 4 | Audience research, content repurposing engine, SEO content gap, campaign post mortem | [03-marketing-content/](prompts/03-marketing-content) |
 | **🎬 Creative media** | 4 | Brand style kit builder, ad storyboard to video, budgeted image batch, music and sound brief | [04-creative-media/](prompts/04-creative-media) |
 | **🔧 Engineering** | 4 | Codebase onboarding, GitHub issue triage, PR deep review, dependency and library audit | [05-engineering/](prompts/05-engineering) |
@@ -99,6 +99,7 @@ cp prompts/01-web-research/deep-research-brief.md ~/.claude/commands/deep-resear
 #### 📈 Markets and finance
 - [Stock 360 view](prompts/02-markets-finance/stock-360-view.md)
 - [Portfolio health check](prompts/02-markets-finance/portfolio-health-check.md)
+- [Portfolio concentration report](prompts/02-markets-finance/portfolio-concentration-report.md): an HTML page with pie and bar charts of where your money sits
 - [Earnings call digest](prompts/02-markets-finance/earnings-call-digest.md)
 - [Sector rotation scan](prompts/02-markets-finance/sector-rotation-scan.md)
 - [Weekly market wrap](prompts/02-markets-finance/weekly-market-wrap.md)
