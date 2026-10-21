@@ -32,7 +32,7 @@ Prompts in `08-trading-strategies/` may build systems that place orders, under t
 - Orders come only from tested bot code, never from chat or MCP order tools.
 - Every strategy has a per trade loss limit, a daily loss limit and a kill switch.
 - Credentials live in `.env`, never in code or logs.
-- Keep within your exchange's retail algo rules (in India: under 10 orders per second and a broker registered static IP, unless the strategy is registered).
+- Keep within your exchange's retail algo rules (in India: under 10 orders per second, a broker registered static IP, and market protection on any market order, unless the strategy is registered).
 - Example cards must explain the idea in plain words and list the risks the card ignores.
 
 ## Style

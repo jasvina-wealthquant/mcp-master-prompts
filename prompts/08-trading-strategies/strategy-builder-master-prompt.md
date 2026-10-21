@@ -57,7 +57,7 @@ Max open positions:       {{n}}
 Margin check before entry: {{yes}}
 
 EXECUTION
-Order type:               {{LIMIT with buffer / MARKET}}
+Order type:               {{LIMIT with buffer / MARKET with market protection}}
 If not filled:            {{e.g. modify toward market up to 3 times, 30 seconds apart}}
 If only one leg fills:    {{e.g. exit the filled leg and alert me}}
 Check frequency:          {{e.g. signals every 15 min close; risk every 1 min}}
@@ -161,6 +161,8 @@ PHASE 5: LIVE (only after I type GO LIVE)
 COMPLIANCE
 - Keep the order rate far below 10 orders per second. Throttle in code.
 - Orders must go out from the static IP registered with my broker.
+- Any market order must carry a non zero market protection value, as SEBI
+  requires for API orders. Prefer limit orders.
 - Add a header comment in runner.py stating the strategy is self built for my
   own account.
 
@@ -178,10 +180,11 @@ module: show the tests, wait for my OK, then move on.
 
 ## SEBI and safety notes
 
-Accurate as of October 2026 (check the latest exchange circulars yourself):
+Accurate as of October 2026, based on the [SEBI circular of 4 Feb 2025](https://www.sebi.gov.in/legal/circulars/feb-2025/safer-participation-of-retail-investors-in-algorithmic-trading_91614.html) and its April 2026 rollout ([explainer by Zerodha](https://inthemoneybyzerodha.substack.com/p/sebi-algo-trading-changes-april-2026)). Check the latest exchange circulars yourself.
 
 - Retail traders can run a self built algo through their broker's API without registering it with the exchange, as long as it stays **below 10 orders per second**. Above that, the strategy must be registered through the broker.
 - API orders must come from a **static IP registered with your broker**.
+- API **market orders must include market protection** (a non zero range around the last price), so they cannot fill at a wild price.
 - Selling options carries large and sometimes unlimited risk. Paper trade first, start with one lot, and always have a hard daily loss limit and a kill switch.
 
 This prompt is a starting point for building your own tools. It is not investment advice and not a recommendation of any strategy.
